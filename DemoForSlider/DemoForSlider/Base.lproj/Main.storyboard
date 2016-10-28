@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DemoForSlider" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +19,58 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1c-N4-Xgr">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wx-3I-SAO">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7q7-9x-gaH" customClass="CircularSlider" customModule="CircularSlider">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7q7-9x-gaH" secondAttribute="height" multiplier="1:1" id="WZs-v5-6OY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Hello!"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ve-pD-gim">
+                                <frame key="frameInset" minX="152" minY="54" width="70" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="updateBackground:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0q-rX-SRb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6wx-3I-SAO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8hK-5E-y8n"/>
+                            <constraint firstItem="D1c-N4-Xgr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="BJX-oL-r7Q"/>
+                            <constraint firstItem="D1c-N4-Xgr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GHQ-ZZ-1En"/>
+                            <constraint firstItem="7q7-9x-gaH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="XyJ-5r-VA4"/>
+                            <constraint firstItem="7q7-9x-gaH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eFR-To-Zm1"/>
+                            <constraint firstItem="6wx-3I-SAO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fNi-i7-YZ2"/>
+                            <constraint firstItem="6wx-3I-SAO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="g7Q-Xb-BGx"/>
+                            <constraint firstItem="6wx-3I-SAO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="n1B-hY-v9I"/>
+                            <constraint firstItem="7q7-9x-gaH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="py7-c7-zm6"/>
+                            <constraint firstItem="D1c-N4-Xgr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="q3d-HN-1Qq"/>
+                            <constraint firstItem="D1c-N4-Xgr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v3S-Hg-Rld"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mySlider" destination="7q7-9x-gaH" id="pr2-af-FkB"/>
+                        <outlet property="redBackground" destination="6wx-3I-SAO" id="2uH-SO-2q7"/>
+                        <outlet property="yellowBackground" destination="D1c-N4-Xgr" id="qMK-DF-Ycf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

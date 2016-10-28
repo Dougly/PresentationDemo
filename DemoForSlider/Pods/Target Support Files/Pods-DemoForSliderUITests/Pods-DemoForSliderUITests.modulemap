@@ -1,0 +1,6 @@
+framework module Pods_DemoForSliderUITests {
+  umbrella header "Pods-DemoForSliderUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
